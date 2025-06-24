@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 🌸 Light Theme */
+[data-theme="light"] {
+  /* Base UI Elements */
+  --page-bg: 0 0% 99%; /* #FCFCFC */
+  --card-bg: 345 100% 97%; /* #FFF0F3 */
+  --primary-text: 0 0% 20%; /* #333333 */
+  --secondary-text: 0 0% 33%; /* #555555 */
+  --muted-text: 0 0% 39%; /* #646464 */
+  --border-color: 0 0% 86%; /* #DCDCDC */
+
+  /* Navigation Elements */
+  --sidebar-bg: 40 100% 94%; /* #FFF5E1 */
+  --sidebar-text: 0 0% 20%; /* #333333 */
+  --sidebar-hover-bg: 345 100% 97%; /* #FFF0F3 */
+
+  --navbar-bg: 0 0% 99%; /* #FCFCFC */
+  --navbar-text: 0 0% 20%; /* #333333 */
+
+  --color-accent: 345 79% 92%; /* #FADADD (Pastel Pink) */
+  --color-accent-hover: 345 70% 88%; /* #F9C6D0 (Rose Pink) */
+  --color-lavender: 240 67% 95%; /* #E6E6FA (Soft Lavender) */
+
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* 🌙 Dark Theme */
+[data-theme="dark"] {
+  /* Base UI Elements */
+  --page-bg: 240 16% 20%; /* #2B2B3A */
+  --card-bg: 240 12% 33%; /* #4A4A5E */
+  --primary-text: 240 28% 97%; /* #F7F7FA */
+  --secondary-text: 240 10% 83%; /* #555555 */
+  --muted-text: 240 10% 65%; /* #A0A0AA */
+  --border-color: 240 8% 46%; /* #70707E */
+
+  /* Navigation Elements */
+  --sidebar-bg: 240 12% 28%; /* #3E3E50 */
+  --sidebar-text: 240 15% 83%; /* #CFCFD5 */
+  --sidebar-hover-bg: 240 12% 33%; /* #4A4A5E */
+
+  --navbar-bg: 240 16% 20%; /* #2B2B3A */
+  --navbar-text: 240 28% 97%; /* #F7F7FA */
+
+  --color-accent: 340 40% 74%; /* #D6A5B7 */
+  --color-accent-hover: 340 34% 66%; /* #C58EA7 */
+  --color-lavender: 240 10% 83%; /* #CFCFD5 */
+
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Apply */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(var(--page-bg));
+  color: hsl(var(--primary-text));
+  font-family: var(--font-sans, Arial, sans-serif);
 }
